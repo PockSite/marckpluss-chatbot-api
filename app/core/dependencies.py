@@ -1,13 +1,7 @@
 
 from fastapi import Depends
-from app.core.database import get_db
-from app.repository.users_repository import UsersRepository
-from app.service.user_service import UserService
+from app.service.openai_service import OpenAIService
+from app.client.openai_client import OpenAIClient
 
-def get_user_service(db = Depends(get_db)):
-    repo = UsersRepository(db)
-    return UserService(repo)
-
-def get_auth_service(db = Depends(get_db)):
-    repo = UsersRepository(db)
-    return UserService(repo)
+def get_openai_service(client: OpenAIClient = Depends()):
+    return OpenAIService(client)
