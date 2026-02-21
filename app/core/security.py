@@ -1,6 +1,5 @@
 from fastapi import Depends, HTTPException, status
 from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
-from app.core.config import SECRET_KEY, ALGORITHM
 from app.core.config import API_KEY
 
 
