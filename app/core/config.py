@@ -15,4 +15,7 @@ OPENAI_API_KEY = os.getenv("OPENAI_API_KEY", "OPENAI_API_KEY_CHANGE_ME")
 
 API_KEY = os.getenv("API_KEY", "ENDPOINT_API_KEY_CHANGE_ME")
 
-CORS = os.getenv("CORS", "http://localhost:4200").split(",")
+CORS = [
+    origin.strip()
+    for origin in os.getenv("CORS", "http://localhost:4200").split(",")
+]
