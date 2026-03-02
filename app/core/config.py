@@ -14,3 +14,8 @@ REFRESH_TOKEN_EXPIRE_DAYS = int(os.getenv("REFRESH_TOKEN_EXPIRE_DAYS", 30))
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY", "OPENAI_API_KEY_CHANGE_ME")
 
 API_KEY = os.getenv("API_KEY", "ENDPOINT_API_KEY_CHANGE_ME")
+
+CORS = [
+    origin.strip()
+    for origin in os.getenv("CORS", "http://localhost:4200").split(",")
+]
